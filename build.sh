@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t file_server .
+docker build --rm -t file_server .
