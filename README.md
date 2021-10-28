@@ -8,4 +8,5 @@ chmod +x build.sh
 
 it'll create file_server:latest in your docker image repository
 
-run -> docker run --rm -d -p 8081:8081 file_server
+# To run
+docker run --rm -d -p 8081:8081 file_server
