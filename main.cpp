@@ -87,12 +87,6 @@ class file_controller : public base_controller
             ofs.close();
             req.base_request.reply(status_codes::OK);
         }
-
-        char* formatdate(char* str, time_t val)
-        {
-                strftime(str, 36, "%d.%m.%Y %H:%M:%S", localtime(&val));
-                return str;
-        }
         
         void fstat(controller_request req)
         {
