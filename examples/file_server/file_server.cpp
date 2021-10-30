@@ -149,7 +149,7 @@ void interrupt_handler( const boost::system::error_code& error , int signal_numb
 int main()
 {
     rest_server server(uri("http://0.0.0.0:8081"));
-    file_controller f_ctrl("https://dev-mstfcmrl.eu.auth0.com/.well-known/jwks.json", getenv("FILE_SERVER_BASE"));
+    file_controller f_ctrl("https://to_your_public_key", getenv("FILE_SERVER_BASE"));
     server.register_route(U("/file"), f_ctrl);
     server.start();
 
