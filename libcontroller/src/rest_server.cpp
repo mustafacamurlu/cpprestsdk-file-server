@@ -29,6 +29,9 @@ void mstfcmrl::rest_server::router(http_request request)
     std::regex route_regex("/");
     string_t request_uri = uri::decode(request.relative_uri().path());
 
+    cout << "uri    -> " << request.request_uri().path() << endl;
+    cout << "method -> " << request.method() << endl;
+
     for (string &s: vector<string>(std::sregex_token_iterator(request_uri.begin(), request_uri.end(), route_regex, -1), std::sregex_token_iterator()))
     {
         route += (route.size() == 1 ? "" : "/") + s;

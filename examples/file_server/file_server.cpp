@@ -148,8 +148,8 @@ void interrupt_handler( const boost::system::error_code& error , int signal_numb
 
 int main()
 {
-    rest_server server(uri("http://0.0.0.0:8081"));
-    file_controller f_ctrl("https://to_your_public_key", getenv("FILE_SERVER_BASE"));
+    rest_server server(uri(string_t("http://0.0.0.0:") + string_t(getenv("FILE_SERVER_PORT"))));
+    file_controller f_ctrl(getenv("FILE_SERVER_PUBLIC_KEY_URI"), getenv("FILE_SERVER_BASE"));
     server.register_route(U("/file"), f_ctrl);
     server.start();
 
